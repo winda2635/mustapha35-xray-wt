@@ -14,7 +14,7 @@
         "decryption": "none"
       },
       "streamSettings": {
-        "network": "ws",
+        "network": "wt",
         "wsSettings": {
           "path": "/xray-wt/mustapha35"
         }
