@@ -8,4 +8,4 @@ COPY config.json /etc/xray/config.json
 
 ENV XRAY_LOCATION_ASSET=/usr/share/xray
 
-CMD ["sh", "-c", "xray run -config /etc/xray/config.json"]
+CMD ["sh", "-c", "xray run -config /etc/xray/config.json -格式=json"]
