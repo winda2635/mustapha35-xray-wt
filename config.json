@@ -1,7 +1,7 @@
 {
   "inbounds": [
     {
-      "port": "env:PORT",
+      "port": 8080,
       "listen": "0.0.0.0",
       "protocol": "vless",
       "settings": {
