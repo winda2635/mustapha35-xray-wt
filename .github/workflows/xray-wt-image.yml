@@ -25,5 +25,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/winda2635/mustapha35-xray-wt:latest
+          tags: soshope35/xray-vless:latest
           platforms: linux/amd64,linux/arm64
