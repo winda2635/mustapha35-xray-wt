@@ -1,8 +1,8 @@
 {
   "inbounds": [
     {
-      "port": "8080",
-      "listen": "0.0.0.0",
+      "port": 10000,
+      "listen": "127.0.0.1",
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -14,7 +14,7 @@
         "decryption": "none"
       },
       "streamSettings": {
-        "network": "wt",
+        "network": "ws",
         "wsSettings": {
           "path": "/xray-wt/mustapha35"
         }
