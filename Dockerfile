@@ -1,8 +1,12 @@
 FROM alpine:latest
 
-RUN apk add --no-cache nginx ca-certificates curl bash
+RUN apk add --no-cache nginx ca-certificates curl unzip
 
-RUN bash -c "$(curl -L https://github.com)" @ install
+RUN mkdir -p /tmp/xray && \
+    curl -L -f -o /tmp/xray.zip https://github.com && \
+    unzip /tmp/xray.zip -d /tmp/xray && \
+    mv /tmp/xray/xray /usr/bin/xray && \
+    rm -rf /tmp/xray*
 
 WORKDIR /etc/xray
 COPY config.json /etc/xray/config.json
