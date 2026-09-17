@@ -1,4 +1,4 @@
-FROM xtls/xray-core:latest
+FROM ghcr.io/xtls/xray-core:latest
 
 LABEL maintainer="mustapha35"
 
