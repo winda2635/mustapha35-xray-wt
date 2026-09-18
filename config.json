@@ -3,6 +3,38 @@
     {
       "listen": "0.0.0.0",
       "port": 8080,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "6984f696-d7a7-4a1c-918c-4259ac559748",
+            "level": 0
+          }
+        ],
+        "decryption": "none",
+        "fallbacks": [
+          {
+            "path": "/vmess/mustapha35",
+            "dest": 8081,
+            "xver": 1
+          },
+          {
+            "path": "/trojan/mustapha35",
+            "dest": 8082,
+            "xver": 1
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/vless/mustapha35"
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 8081,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -15,33 +47,14 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/vmess/mustapha35"
+          "path": "/vmess/mustapha35",
+          "acceptProxyProtocol": true
         }
       }
     },
     {
-      "listen": "0.0.0.0",
-      "port": 8080,
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "id": "6984f696-d7a7-4a1c-918c-4259ac559748",
-            "level": 0
-          }
-        ],
-        "decryption": "none"
-      },
-      "streamSettings": {
-        "network": "ws",
-        "wsSettings": {
-          "path": "/vless/mustapha35"
-        }
-      }
-    },
-    {
-      "listen": "0.0.0.0",
-      "port": 8080,
+      "listen": "127.0.0.1",
+      "port": 8082,
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -53,7 +66,8 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/trojan/mustapha35"
+          "path": "/trojan/mustapha35",
+          "acceptProxyProtocol": true
         }
       }
     }
