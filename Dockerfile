@@ -37,7 +37,7 @@ COPY --chown=xray:xray config.json /etc/xray/config.json
 
 USER xray
 
-EXPOSE 8080
+EXPOSE 7860
 
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
     CMD xray version || exit 1
