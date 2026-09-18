@@ -4,8 +4,18 @@ RUN apk add --no-cache curl unzip ca-certificates
 
 ENV XRAY_VERSION=24.11.30
 
-RUN curl -L -o /tmp/xray.zip \
-    "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/Xray-linux-64.zip" \
+# سيتغير هذا المتغير تلقائياً بين amd64 و arm64 أثناء البناء
+ARG TARGETARCH
+
+RUN if [ "${TARGETARCH}" = "amd64" ]; then \
+        XRAY_ARCH="64"; \
+    elif [ "${TARGETARCH}" = "arm64" ]; then \
+        XRAY_ARCH="arm64-v8a"; \
+    else \
+        XRAY_ARCH="64"; \
+    fi && \
+    curl -L -o /tmp/xray.zip \
+    "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/Xray-linux-${XRAY_ARCH}.zip" \
     && unzip /tmp/xray.zip -d /tmp/xray \
     && chmod +x /tmp/xray/xray
 
